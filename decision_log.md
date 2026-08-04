@@ -1,4 +1,4 @@
-[DECISION_LOG M1.md](https://github.com/user-attachments/files/30710220/DECISION_LOG.M1.md)
+[DECISION_LOG M1.md](https://github.com/user-attachments/files/30711176/DECISION_LOG.M1.md)
 # GenAI4P MVP — Development Decision Log
 
 **Baseline (frozen as of 2026-08-04):** URD MVP V5.0 · SysSpec & Deployment
@@ -226,3 +226,23 @@ Status: OPEN
 Rebase action: None directly; process note for SysSpec §5.4 — a review
 needs the literal current file contents, not a paraphrase of them, or
 DEVGOV-4's gate doesn't actually cover what's being deployed.
+
+### DEVLOG-M1-011 — Roster extended to a 9th identity (GenAI4P Trainer)
+Date: 2026-08-04
+Type: DEPARTURE_FROM_BASELINE
+Baseline ref: URD §8.3 ("seed eight named users... PC1, PC2, TR1, TR2,
+QA1, QA2, Lead1, Lead2")
+Claude did: Added `TRAINER1` / "GenAI4P Trainer" / `role=PC` to
+`roles_roster` so `dev_logs.deployed_by` (SysSpec §5.4) could reference a
+real accountable identity for the M1 deploy, rather than reusing a
+fictional PC1/PC2 persona or writing a non-roster string into
+`deployed_by`. The specific `user_id`/`role` values were Claude's
+proposal — the human specified only the display name.
+DeepSeek said: N/A — not reviewed.
+Human decision: Requested recording "GenAI4P Trainer" as the deploying
+identity for the M1 dev_logs entry.
+Status: DECIDED (values as proposed — flag if `TRAINER1`/`role=PC` should
+be corrected)
+Rebase action: At next rebase, URD §8.3 needs either a 9th roster row
+made explicit, or a note that MVP dev/deploy accountability may extend
+the fixed eight-persona translation roster.
