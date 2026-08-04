@@ -1,0 +1,6 @@
+streamlit
+supabase
+anthropic
+python-docx
+langdetect
+pandas
